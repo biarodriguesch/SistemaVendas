@@ -12,7 +12,7 @@
 
                 <div class="p-6 text-gray-900">
                     Detalhamento de vendas
-                    <select class="form-select " id="nome-funcionario" aria-label="Default select example">
+                    <select class="form-select " type="text" id="nome-funcionario" aria-label="Default select example">
 
                         <option selected>Nome</option>
                     </select>
