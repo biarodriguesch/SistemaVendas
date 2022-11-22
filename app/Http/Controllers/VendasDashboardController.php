@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\DadosVendas;
+use App\Models\Sales;
 use Illuminate\Http\Request;
 
 
-class VendasDashboard extends Controller
+class VendasDashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +16,10 @@ class VendasDashboard extends Controller
      */
     public function index(Request $request)
     {
-        return view('dashboard', [
-            'user' => $request->user(),
-        ]);
+        $vendas = Sales::latest()->paginate(5);
 
-
+        return view('vendas.index',compact('vendas'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -27,9 +27,11 @@ class VendasDashboard extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        return view('vendas.vendas-create', [
+            'user' => $request->user(),
+        ]);
     }
 
     /**
@@ -40,16 +42,17 @@ class VendasDashboard extends Controller
      */
     public function store(Request $request)
     {
+
+        dd($request);
         $request->validate([
-            'nome' => 'required',
+            'name' => 'required',
             'produto' => 'required',
-            'parcelas' => 'required',
         ]);
 
-        DadosVendas::create($request->all());
+        Sales::create($request->all());
 
-        return redirect()->route('dashboard')
-                        ->with('success','User created successfully.');
+        return redirect()->route('vendas.index')
+                        ->with('success','Vendas created successfully.');
     }
 
     /**
@@ -92,9 +95,9 @@ class VendasDashboard extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DadosVendas $dadosVendas)
+    public function destroy(Sales $sales)
     {
-        $dadosVendas->delete();
+        $sales->delete();
 
         return redirect()->route('products.index')
                         ->with('success','Product deleted successfully');

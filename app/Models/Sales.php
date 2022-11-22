@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class DadosVendas extends Authenticatable
+class Sales extends Authenticatable
 {
     use HasFactory;
 
@@ -17,5 +17,7 @@ class DadosVendas extends Authenticatable
         'name',
         'produto',
         'parcelas',
+        'a_vista',
+        'parcelado'
     ];
 }

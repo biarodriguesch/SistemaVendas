@@ -17,7 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('produto');
-            $table->string('parcelas');
+            $table->string('parcelas')->nullable();;
+            $table->string('a_vista')->nullable();;
+            $table->string('parcelado')->nullable();;
             $table->timestamps();
         });
     }
