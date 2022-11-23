@@ -42,6 +42,7 @@ class VendasDashboardController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request);
         $request->validate([
             'name' => 'required',
             'produto' => 'required',
@@ -59,10 +60,10 @@ class VendasDashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function show(Sales $sales)
-    // {
-    //     return view('vendas.show',compact('vendas'));
-    // }
+    public function show(Sales $sales)
+    {
+        return view('vendas.show-vendas',compact('sales'));
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -70,9 +71,11 @@ class VendasDashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Sales $sales)
+    public function edit(Sales $sales, $id)
     {
-        return view('vendas.edit-vendas',compact('sales'));
+        $vendas = Sales::find($id);
+
+        return view('vendas.edit-vendas',compact('vendas'));
     }
 
     /**
@@ -82,12 +85,13 @@ class VendasDashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sales $sales)
+    public static function update(Request $request, Sales $sales)
     {
         $request->validate([
             'name' => 'required',
             'produto' => 'required',
             ]);
+
             $sales->update($request->all());
 
             return redirect()->route('vendas.index')
@@ -100,11 +104,11 @@ class VendasDashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function destroy(Sales $sales)
-    // {
-    //     $sales->delete();
+    public function destroy(Sales $sales)
+    {
+        $sales->delete();
 
-    //     return redirect()->route('products.index')
-    //                     ->with('success','Product deleted successfully');
-    // }
+        return redirect()->route('products.index')
+                        ->with('success','Product deleted successfully');
+    }
 }
