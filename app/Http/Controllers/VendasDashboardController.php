@@ -84,7 +84,14 @@ class VendasDashboardController extends Controller
      */
     public function update(Request $request, Sales $sales)
     {
+        $request->validate([
+            'name' => 'required',
+            'produto' => 'required',
+            ]);
+            $sales->update($request->all());
 
+            return redirect()->route('vendas.index')
+            ->with('success','vendas updated successfully');
     }
 
     /**

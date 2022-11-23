@@ -27,7 +27,7 @@
                           <tr>
                             <td>{{ $request->produto }}</td>
                             <td>{{ $request->name }}</td>
-                            <td>{{ $request->a_vista }}{{ $request->parcelado}}</td>
+                            <td>{{ $request->parcelado}}{{$request->a_vista}}</td>
                             <td>{{ $request->parcelas }}</td>
                             <td>
                             {{-- <form action="{{ route('vendas.destroy',$vendas->id) }}" method="POST">

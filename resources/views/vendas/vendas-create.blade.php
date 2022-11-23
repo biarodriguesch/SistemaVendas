@@ -34,13 +34,13 @@
                                 <p>Forma de Pagamento
                                 <p>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="avista" onclick='handleAvista(this)' name="a_vista">
+                                    <input class="form-check-input" type="checkbox" value="Á vista" id="avista" onclick='handleAvista(this)' name="a_vista">
                                     <label class="form-check-label" for="flexCheckDefault">
                                         Á vista
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" name="parcelado" id="parcelado" onclick='handleParcelado(this)'>
+                                    <input class="form-check-input" type="checkbox" value="Parcelado" name="parcelado" id="parcelado" onclick='handleParcelado(this)'>
                                     <label class="form-check-label" for="flexCheckDefault"  >
                                         Parcelado
                                     </label>
