@@ -64,7 +64,7 @@
                                 </div>
                                 <select name="parcelas"class="form-select mb-3" aria-label="Default select example"  value="{{ $vendas->parceladas }}"
                                     id="parcelas">
-                                    <option selected value="" hidden>Selecione uma Parcela</option>
+                                    <option selected hidden> {{ $vendas->parcelas }}</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
