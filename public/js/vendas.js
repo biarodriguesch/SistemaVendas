@@ -16,7 +16,5 @@ function handleParcelado(campo) {
 
         document.getElementById("avista").checked = false;
 
-
-
     }
 }

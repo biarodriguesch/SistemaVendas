@@ -35,7 +35,7 @@
                             @method('DELETE') --}}
                             {{-- href="{{ route('products.edit',$product->id) }}" --}}
                             <a class="btn btn-primary"><i class="bi bi-pencil"></i> </a>
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button  class="btn btn-danger"><i class="bi bi-trash3"></i></button>
                             </form>
                             </td>
                           </tr>
