@@ -95,11 +95,11 @@ class VendasDashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Sales $sales)
-    {
-        $sales->delete();
+    // public function destroy(Sales $sales)
+    // {
+    //     $sales->delete();
 
-        return redirect()->route('products.index')
-                        ->with('success','Product deleted successfully');
-    }
+    //     return redirect()->route('products.index')
+    //                     ->with('success','Product deleted successfully');
+    // }
 }

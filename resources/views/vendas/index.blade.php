@@ -28,10 +28,10 @@
                             <td>{{ $request->name }}</td>
                             <td>{{ $request->a_vista }}{{ $request->parcelado}}</td>
                             <td>{{ $request->parcelas }}</td>
-                            <form action="{{ route('vendas.destroy',$vendas->id) }}" method="POST">
+                            {{-- <form action="{{ route('vendas.destroy',$vendas->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-danger">Delete</button> --}}
                             </form>
                           </tr>
                         </tbody>
