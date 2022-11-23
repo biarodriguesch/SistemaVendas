@@ -72,7 +72,7 @@ class VendasDashboardController extends Controller
      */
     public function edit(Sales $sales)
     {
-        return view('vendas.edit',compact('vendas'));
+        return view('vendas.edit-vendas',compact('sales'));
     }
 
     /**

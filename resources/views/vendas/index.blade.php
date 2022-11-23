@@ -34,7 +34,7 @@
                             @csrf
                             @method('DELETE') --}}
                             {{-- href="{{ route('products.edit',$product->id) }}" --}}
-                            <a class="btn btn-primary"><i class="bi bi-pencil"></i> </a>
+                            <a class="btn btn-primary" href="{{ route('vendas.edit', $request->id) }}"><i class="bi bi-pencil"></i> </a>
                             <button  class="btn btn-danger"><i class="bi bi-trash3"></i></button>
                             </form>
                             </td>

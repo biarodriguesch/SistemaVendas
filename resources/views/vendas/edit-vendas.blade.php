@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <form action="{{ route('vendas.store') }}" method="POST">
+    <a class="btn btn-primary" href="{{ route('products.index') }}"> Back</a>
     @csrf
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-12 lg:px-12">
