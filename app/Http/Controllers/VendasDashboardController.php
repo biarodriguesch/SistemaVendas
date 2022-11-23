@@ -61,10 +61,10 @@ class VendasDashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
+    // public function show(Sales $sales)
+    // {
+    //     return view('vendas.show',compact('vendas'));
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -72,9 +72,9 @@ class VendasDashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Sales $sales)
     {
-        //
+        return view('vendas.edit',compact('vendas'));
     }
 
     /**
@@ -84,9 +84,9 @@ class VendasDashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Sales $sales)
     {
-        //
+
     }
 
     /**

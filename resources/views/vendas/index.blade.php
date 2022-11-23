@@ -19,6 +19,7 @@
                             <th scope="col">Vendedor</th>
                             <th scope="col">Método de pagamento</th>
                             <th scope="col">Parcelas</th>
+                            <th scope="col">Opções</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -28,11 +29,13 @@
                             <td>{{ $request->name }}</td>
                             <td>{{ $request->a_vista }}{{ $request->parcelado}}</td>
                             <td>{{ $request->parcelas }}</td>
+                            <td>
                             {{-- <form action="{{ route('vendas.destroy',$vendas->id) }}" method="POST">
                             @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button> --}}
+                            @method('DELETE') --}}
+                            <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
+                            </td>
                           </tr>
                         </tbody>
                         @endforeach
